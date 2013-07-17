@@ -1,34 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <%= image_tag @book.photo if @book.photo.present? %>
-</p>
-<p>
-  <b>Title:</b>
-  <%= @book.title %>
-</p>
+<div class = "title">
+    <h3><%= @book.title %></h3> 
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @book.description %>
-</p>
+<div class = "photo">
+  <p>
+    <%= image_tag @book.photo if @book.photo.present? %>
+  </p>
+</div>
 
-<p>
-  <b>Author:</b>
-  <%= @book.author %>
-</p>
+<div class = "data">
 
-<p>
-  <b>Isbn:</b>
-  <%= @book.isbn %>
-</p>
+  <p>
+    <b>Description:</b>
+    <%= @book.description %>
+  </p>
 
+  <p>
+    <b>Author:</b>
+    <%= @book.author %>
+  </p>
 
-<p>
-  <b>Genre:</b>
-  <%= @book.genre %>
-</p>
+  <p>
+    <b>Isbn:</b>
+    <%= @book.isbn %>
+  </p>
 
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+  <p>
+    <b>Genre:</b>
+    <%= @book.genre %>
+  </p>
+</div>
+
+<div class = "links">
+  <%= link_to 'Edit', edit_book_path(@book) %> |
+  <%= link_to 'Back', books_path %>
+</div>

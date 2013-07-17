@@ -15,8 +15,8 @@
 @import "bootstrap";
 
 .header {
-	height:225px;
-	background-color:violet;
+	height:275px;
+	background-image: url('books_small.jpg');
 	background-repeat:repeat-x;
 }
 tr{
@@ -30,6 +30,7 @@ td{
 
 th{
 	padding:5px;
+	width: 20%;
 
 }
 
@@ -46,8 +47,3 @@ table{
 h1{
 	margin-top:0px;
 }
-
-/*html {
-	background-image: url('bookstore.jpeg');
-	background-repeat:no-repeat;
-}*/
