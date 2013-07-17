@@ -32,6 +32,10 @@
     <b>Genre:</b>
     <%= @book.genre %>
   </p>
+
+  <p>
+    <b>Added By:</b>
+    <%= User.find(@book.user_id).email %>
 </div>
 
 <div class = "links">

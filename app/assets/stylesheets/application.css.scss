@@ -19,6 +19,15 @@
 	background-image: url('books_small.jpg');
 	background-repeat:repeat-x;
 }
+
+.header h1{
+	color: seashell;
+	padding-top:160px;
+	float:right;
+	margin-right:20px;
+	font-size:100px;
+	letter-spacing:3px;
+}
 tr{
 	padding:5px;
 	width:100%;
@@ -46,4 +55,9 @@ table{
 
 h1{
 	margin-top:0px;
+	font-family:'Henny Penny', sans-serif;
+}
+
+.header a{
+	color:#ffffff !important;
 }
