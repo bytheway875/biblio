@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :email, :username, :password, :password_confirmation
 
-  has_many :books
+  has_and_belongs_to_many :books
 end

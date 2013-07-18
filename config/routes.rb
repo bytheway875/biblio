@@ -1,7 +1,10 @@
 Biblio::Application.routes.draw do
   devise_for :users
+  
+  resources :users
+  resources :books 
+  
 
-  resources :books
   root :to => 'books#index'
 
   # The priority is based upon order of creation:
