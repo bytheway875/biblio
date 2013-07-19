@@ -5,7 +5,6 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'goodreads'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'carrierwave'
@@ -23,6 +22,19 @@ end
 
 gem 'jquery-rails'
 gem 'devise'
+
+group :development do
+	gem 'better_errors'
+	gem 'binding_of_caller'
+	gem 'sqlite3'
+end
+
+group :production do
+	gem 'pg'
+end
+
+gem 'awesome_print'
+gem 'pry'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
