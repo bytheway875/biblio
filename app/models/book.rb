@@ -12,7 +12,7 @@ class Book < ActiveRecord::Base
   	@book = self.find_book_by_isbn(isbn)
   	@book.isbn
   end
-  
+
   def get_title(isbn)
   	@book = self.find_book_by_isbn(isbn)
   	@book.title
