@@ -10,7 +10,11 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <p> Enter an ISBN to find your book, OR enter your book's Information.</p>
+    <%= f.label :isbn %><br />
+    <%= f.text_field :isbn %>
+  </div>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -24,16 +28,8 @@
     <%= f.text_field :author %>
   </div>
   <div class="field">
-    <%= f.label :isbn %><br />
-    <%= f.text_field :isbn %>
-  </div>
-  <div class="field">
     <%= f.label :photo %><br />
     <%= f.file_field :photo %>
-  </div>
-  <div class="field">
-    <%= f.label :genre %><br />
-    <%= f.text_field :genre %>
   </div>
   <div class="actions">
     <%= f.submit %>

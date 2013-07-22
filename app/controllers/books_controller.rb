@@ -41,10 +41,11 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = current_user.comments.build(params[:book])
+    @user = current_user
+    @book = current_user.books.build(params[:book])
 
     respond_to do |format|
-      if @book.save
+      if @user.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }
       else

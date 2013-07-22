@@ -22,6 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'devise'
+gem 'sanitize'
 
 group :development do
 	gem 'better_errors'

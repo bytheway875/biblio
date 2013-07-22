@@ -5,9 +5,13 @@
 </div>
 
 <div class = "photo">
+  <% if @book.photo.present? %>
   <p>
-    <%= image_tag @book.photo if @book.photo.present? %>
+    <%= image_tag @book.photo %>
   </p>
+  <% elsif @book.goodreadsphoto.present? %>
+    <%= image_tag @book.goodreadsphoto %>
+  <% end %>
 </div>
 
 <div class = "data">
@@ -25,12 +29,6 @@
   <p>
     <b>Isbn:</b>
     <%= @book.isbn %>
-  </p>
-
-
-  <p>
-    <b>Genre:</b>
-    <%= @book.genre %>
   </p>
 
  
