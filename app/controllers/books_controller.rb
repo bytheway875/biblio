@@ -41,11 +41,22 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @user = current_user
-    @book = current_user.books.build(params[:book])
+
+    @book = Book.find_or_create_by_isbn(params[:book][:isbn]) do |book|
+      book.title = params[:book][:title]
+      book.description = params[:book][:description]
+      book.author = params[:book][:author]
+      book.genre = params[:book][:genre]
+      book.photo = params[:book][:goodreadsphoto]
+    end
+
+    @book_user = current_user.books_users.find_or_create_by_book_id(@book.id)
 
     respond_to do |format|
-      if @user.save
+      if @book.persisted?
+        format.html { redirect_to @book, notice: "That book is already in Biblio's database, so we'll add it to your reading list." }
+        format.json { render json: @book, status: :created, location: @book }
+      elsif @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }
       else

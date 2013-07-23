@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :user_id
-
-  has_and_belongs_to_many :books
+  
+  has_many :books_users
+  has_many :books, :through => :books_users 
 end
 
 
