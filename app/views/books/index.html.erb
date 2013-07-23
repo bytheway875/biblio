@@ -1,4 +1,4 @@
-<h1>Listing books</h1>
+<h1>People are Reading ...</h1>
 
 <table>
   <tr>
@@ -14,7 +14,13 @@
 
 <% @books.each do |book| %>
   <tr>
-    <td><%= image_tag book.photo, width:'80' if book.photo.present? %>
+    <td>
+        <% if book.photo.present? %>
+            <%= image_tag book.photo, height:80 %>
+        <% elsif book.goodreadsphoto.present? %>
+            <%= image_tag book.goodreadsphoto, height: 80 %>
+        <% end %>
+    </td>
     <td><%= book.title %></td>
     <td><%= book.author %></td>
     <td><%= book.isbn %></td>
