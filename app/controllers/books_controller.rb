@@ -87,6 +87,7 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
+    # current_user.books_users.find_by_book_id(@book.id).update_attributes(:user_id, nil)
 
     respond_to do |format|
       format.html { redirect_to books_url }

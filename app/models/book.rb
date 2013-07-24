@@ -12,7 +12,11 @@ class Book < ActiveRecord::Base
       @client = Goodreads.new
       @book = @client.book_by_isbn(self.isbn)
       self.title = @book.title
-      self.author = @book.authors.author.first.name
+      if @book.authors.author.is_a?(Array)
+        self.author = @book.authors.author.first.name
+      else
+        self.author = @book.authors.author.name
+      end
       self.description = Sanitize.clean(@book.description)
       self.goodreadsphoto = @book.image_url
     end
