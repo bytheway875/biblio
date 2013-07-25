@@ -50,7 +50,7 @@ class BooksController < ApplicationController
       book.photo = params[:book][:goodreadsphoto]
     end
 
-    @book_user = current_user.books_users.find_or_create_by_book_id(@book.id)
+    @reivew = current_user.reviews.find_or_create_by_book_id(@book.id)
 
     respond_to do |format|
       if @book.persisted?
@@ -85,9 +85,7 @@ class BooksController < ApplicationController
   # DELETE /books/1
   # DELETE /books/1.json
   def destroy
-    @book = Book.find(params[:id])
-    @book.destroy
-    # current_user.books_users.find_by_book_id(@book.id).update_attributes(:user_id, nil)
+    current_user.reviews.where(book_id: params[:id]).destroy_all
 
     respond_to do |format|
       format.html { redirect_to books_url }

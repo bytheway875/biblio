@@ -2,8 +2,8 @@ class Book < ActiveRecord::Base
   attr_accessible :author, :description, :genre, :isbn, :title, :photo, :goodreadsphoto
   mount_uploader :photo, PhotoUploader
 
-  has_many :books_users
-  has_many :users, :through => :books_users
+  has_many :reviews
+  has_many :users, :through => :reviews
 
   before_create :extract_goodreads_info, 
     :if => :isbn?

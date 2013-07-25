@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :user_id
   
-  has_many :books_users
-  has_many :books, :through => :books_users 
+  has_many :reviews
+  has_many :books, :through => :reviews
 end
 
 
