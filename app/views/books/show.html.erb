@@ -1,40 +1,37 @@
 <p id="notice"><%= notice %></p>
+<div class = "content">
+  <div class = "photo span2">
+    <% if @book.photo.present? %>
+        <%= image_tag @book.photo %>
+    <% elsif @book.goodreadsphoto.present? %>
+        <%= image_tag @book.goodreadsphoto %>
+    <% end %>
+  </div>
 
-<div class = "title">
+  <div class = "data span8">
+    <div class = "title">
     <h3><%= @book.title %></h3> 
+  </div>
+    <p>
+      <b>Description:</b>
+      <%= @book.description %>
+    </p>
+
+    <p>
+      <b>Author:</b>
+      <%= @book.author %>
+    </p>
+
+    <p>
+      <b>Isbn:</b>
+      <%= @book.isbn %>
+    </p>
+
+   
+  </div>
 </div>
 
-<div class = "photo">
-  <% if @book.photo.present? %>
-  <p>
-    <%= image_tag @book.photo %>
-  </p>
-  <% elsif @book.goodreadsphoto.present? %>
-    <%= image_tag @book.goodreadsphoto %>
-  <% end %>
-</div>
-
-<div class = "data">
-
-  <p>
-    <b>Description:</b>
-    <%= @book.description %>
-  </p>
-
-  <p>
-    <b>Author:</b>
-    <%= @book.author %>
-  </p>
-
-  <p>
-    <b>Isbn:</b>
-    <%= @book.isbn %>
-  </p>
-
- 
-</div>
-
-<div class = "links">
+<div class = "links span2">
   <%= link_to 'Edit', edit_book_path(@book) %> |
   <%= link_to 'Back', books_path %>
 </div>
