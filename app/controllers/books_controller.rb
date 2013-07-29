@@ -50,7 +50,7 @@ class BooksController < ApplicationController
       book.photo = params[:book][:goodreadsphoto]
     end
 
-    @reivew = current_user.reviews.find_or_create_by_book_id(@book.id)
+    @review = current_user.reviews.find_or_create_by_book_id(@book.id)
 
     respond_to do |format|
       if @book.persisted?
