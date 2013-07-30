@@ -10,8 +10,12 @@ class Book < ActiveRecord::Base
 
     def extract_goodreads_info
       @client = Goodreads.new
+      # need to have error handling when isbn is not in Goodreads db
+      # begin rescue
       @book = @client.book_by_isbn(self.isbn)
-      self.title = @book.title
+      if @book
+        self.title = @book.title
+      end
       if @book.authors.author.is_a?(Array)
         self.author = @book.authors.author.first.name
       else

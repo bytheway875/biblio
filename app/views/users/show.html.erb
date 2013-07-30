@@ -17,9 +17,9 @@
 	  <tr>
 	    <td>
         <% if book.photo.present? %>
-          <%= image_tag book.photo, height:80 %>
+          <%= image_tag book.photo, width:'80' %>
         <% elsif book.goodreadsphoto.present? %>
-          <%= image_tag book.goodreadsphoto, height: 80 %>
+          <%= image_tag book.goodreadsphoto, width: '80' %>
         <% end %>
     	</td>
 	    <td><%= book.title %></td>

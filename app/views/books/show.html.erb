@@ -2,9 +2,9 @@
 <div class = "content">
   <div class = "photo span2">
     <% if @book.photo.present? %>
-        <%= image_tag @book.photo %>
+        <%= image_tag @book.photo, width: '80' %>
     <% elsif @book.goodreadsphoto.present? %>
-        <%= image_tag @book.goodreadsphoto %>
+        <%= image_tag @book.goodreadsphoto, width: '80' %>
     <% end %>
   </div>
 

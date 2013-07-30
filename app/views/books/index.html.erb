@@ -13,9 +13,9 @@
   <tr>
     <td>
         <% if book.photo.present? %>
-            <%= link_to (image_tag book.photo, height:80), book %>
+            <%= link_to (image_tag book.photo_url, width:'80'), book %>
         <% elsif book.goodreadsphoto.present? %>
-            <%= link_to (image_tag book.goodreadsphoto, height:80), book %>
+            <%= link_to (image_tag book.goodreadsphoto, width:'80'), book %>
         <% end %>
     </td>
     <td><%= link_to book.title, book %></td>
